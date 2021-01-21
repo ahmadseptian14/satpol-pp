@@ -1,0 +1,9 @@
+@media (min-width: 992px) {
+  .navbar .navbar-alternate {
+    color: black !important;
+  }
+  .navbar-light .navbar-nav .navbar-alternate {
+    color: black !important;
+  }
+}
+/*# sourceMappingURL=navbar-alternate.css.map */

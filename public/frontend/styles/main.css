@@ -1,0 +1,144 @@
+body {
+  background-color: whitesmoke;
+  font-family: 'Quicksand', sans-serif;
+  height: 100vh;
+}
+
+h2 {
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h3 {
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.navbar {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+  color: #2E2E36 !important;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #2E2E36 !important;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+header {
+  margin-top: 10px;
+  height: 900px;
+  margin-bottom: 100px;
+  background-color: #2E2E36;
+  position: relative;
+  color: white;
+}
+
+header h2 {
+  padding-top: 100px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+header img {
+  width: 70%;
+  margin-top: 50px;
+  border-radius: 5%;
+  -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+}
+
+.section-visi {
+  margin-bottom: 100px;
+}
+
+.section-about {
+  margin-bottom: 100px;
+}
+
+.section-gallery .card-gallery {
+  margin-bottom: 40px;
+}
+
+.section-footer {
+  background-color: #2E2E36;
+}
+
+.section-footer h5 {
+  color: white;
+}
+
+.section-footer ul li a {
+  color: white;
+}
+
+.tombol {
+  text-transform: uppercase;
+  border-radius: 40px;
+  font-weight: bold;
+}
+
+@media (min-width: 992px) {
+  .navbar .navbar-brand {
+    color: white !important;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: white !important;
+  }
+  header {
+    height: 600px;
+    margin-bottom: 100px;
+    margin-top: -80px;
+  }
+  header h2 {
+    padding-top: 120px;
+    font-size: 60px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+  }
+  header .image1 {
+    width: 75%;
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+  header .image2 {
+    width: 80%;
+    margin-bottom: 80px !important;
+    margin-left: 30%;
+  }
+  .section-visi {
+    margin-bottom: 100px;
+  }
+  .section-visi h3 {
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .section-about {
+    margin-bottom: 100px;
+  }
+  .section-about h2 {
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .section-gallery {
+    margin-bottom: 100px;
+  }
+  .section-gallery h2 {
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+/*# sourceMappingURL=main.css.map */

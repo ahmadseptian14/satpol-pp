@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,MAAM,EAAE,SAAS,EAAE,KAAK;EACpB,AACI,OADG,CACH,iBAAiB,CAAC;IACd,KAAK,EAAE,gBAAgB;GAC1B;EAEL,AAEQ,aAFK,CACT,WAAW,CACP,iBAAiB,CAAC;IACd,KAAK,EAAE,gBAAgB;GAC1B",
+    "sources": [
+        "navbar-alternate.scss"
+    ],
+    "names": [],
+    "file": "navbar-alternate.css"
+}
