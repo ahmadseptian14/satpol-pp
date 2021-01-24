@@ -6,8 +6,11 @@ use App\Member;
 use App\Performance;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Exports\PerformanceExport;
+use App\Imports\PerformanceImport;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\Admin\PerformanceRequest;
 
 class PerformanceController extends Controller
@@ -58,12 +61,12 @@ class PerformanceController extends Controller
      */
     public function show($members_id)
     {
-        // tamilkan semua data performance berdasarkan id member dengan relasi member dan forignid members_id, tampilkan per 5data dengan pagination
+        // tamilkan semua data performance berdasarkan id member dengan relasi member dan foreignid members_id, tampilkan per 5data dengan pagination
         $item = Performance::with(['member'])->where('members_id', $members_id)->get();
-        $item = Performance::with(['member'])->where('members_id', $members_id)->paginate(5);
+        // $item = Performance::with(['member'])->where('members_id', $members_id)->paginate(5);
         $members = Member::all();
 
-        return view('pages.admin.performance.detail', ['item' => $item, 'members' => $members]);
+        return view('pages.admin.performance.detail', ['item' => $item, 'members' => $members, 'members_id' => $members_id]);
     }
 
     /**
@@ -121,4 +124,26 @@ class PerformanceController extends Controller
             return redirect()->back();
        
     }
+
+    public function export($members_id) 
+    {   
+        $user = Auth::user()->roles == 'ADMIN';
+        
+        if($user)
+        {
+            $performance = Performance::with(['member'])->where('members_id', $members_id)->get();
+        return Excel::download(new PerformanceExport($performance), 'kinerja.xlsx');
+        }
+        return redirect()->back();
+        
+    }
+
+    public function import() 
+    {
+        Excel::import(new PerformanceImport,request()->file('file'));
+           
+        return back();
+    }
+
 }
+ 

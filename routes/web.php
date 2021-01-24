@@ -52,11 +52,13 @@ Route::get('/', 'HomeController@index')->name('home');
 
         // Route Performance
         Route::get('/create', 'PerformanceController@create')->name('performance.create');
-        Route::get('/performa/{id}', 'PerformanceController@show')->name('performance.show');
+        Route::get('/performance/{id}', 'PerformanceController@show')->name('performance.show');
         Route::POST('/performance', 'PerformanceController@store')->name('performance.store');
         Route::get('/performa/edit/{id}', 'PerformanceController@edit')->name('performance.edit');
         Route::patch('/performa/update/{id}', 'PerformanceController@update')->name('performance.update');
         Route::delete('performa/delete{id}', 'PerformanceController@destroy')->name('performance.destroy');
+        Route::get('/performance/export/{id}', 'PerformanceController@export')->name('export');
+        Route::post('performance/import', 'PerformanceController@import')->name('import');
     });
 
 

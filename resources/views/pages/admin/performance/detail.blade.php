@@ -7,8 +7,11 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800">Data Kinerja</h1>
-          {{-- <a href="{{route('performance.create')}}" class="btn btn-primary btn-sm shadow-sm">Tambah Kinerja</a> --}}
+          <a href="{{route('performance.create')}}" class="btn btn-primary btn-sm shadow-sm">Tambah Kinerja</a>
           </div>
+          @if (Auth::user()->roles == 'ADMIN')
+            <a class="btn btn-warning" href="{{ route('export', ['id'=> $members_id]) }}">Export Data Kinerja</a>   
+          @endif
           <div class="row">
               <div class="card-body">
                   <div class="table-responsive">
@@ -29,8 +32,9 @@
                         </thead>
                         <tbody>
                             @forelse ($item as $key => $performance)
-                                <tr>
-                                <td>{{$item->firstItem() + $key}}</td>
+                                <tr> 
+                                {{-- <td>{{$item->firstItem() + $key}}</td> --}}
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{$performance->kegiatan}}</td>
                                 <td>{{$performance->lama_waktu}}</td>
                                 <td>{{$performance->hasil}}</td>
@@ -55,7 +59,7 @@
                             @endforelse
                         </tbody>
                       </table>
-                      <div>
+                      {{-- <div>
                           Showing
                           {{$item->firstItem()}}
                           to
@@ -67,7 +71,7 @@
                       
                       <div style="margin-left: 850px">
                         {{$item->links()}}
-                     </div>
+                     </div> --}}
                   </div>
               </div>
           </div>
