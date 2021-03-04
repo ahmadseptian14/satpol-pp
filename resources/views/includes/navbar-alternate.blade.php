@@ -9,6 +9,7 @@
             <a class="nav-link text-white page-scroll navbar-alternate" href="{{route('home')}}">Home</a>
             <a class="nav-link text-white page-scroll navbar-alternate" href="{{route('home')}}">Gallery</a>
             <a class="nav-link text-white page-scroll navbar-alternate" href="{{route('home')}}">About Us</a>
+            <a class="nav-link text-white page-scroll btn btn-primary register" href="{{route('register')}}">Register</a>
             </div>
         </div>
     </nav>

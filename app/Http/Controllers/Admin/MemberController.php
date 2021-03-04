@@ -78,7 +78,7 @@ class MemberController extends Controller
         $data['slug'] = Str::slug($request->nama);
         Member::create($data);
 
-        return redirect()->route('member.index')->with('status', 'Data Anggota Berhasil Ditambahkan');
+        return redirect()->route('member.index')->with('status', 'Pegawai Patroli Berhasil Ditambahkan');
     }
 
     /**
@@ -137,7 +137,7 @@ class MemberController extends Controller
         $item = Member::findOrFail($id);
         $item->update($data);
 
-        return redirect()->route('member.index')->with('status', 'Data Anggota Berhasil Diupdate');
+        return redirect()->route('member.index')->with('status', 'Pegawai Patroli Berhasil Diupdate');
     }
 
     /**
@@ -153,7 +153,7 @@ class MemberController extends Controller
             $item = Member::findOrFail($id);
             $item->delete();
 
-            return redirect()->route('member.index')->with('status', 'Data Anggota Berhasil Dihapus');
+            return redirect()->route('member.index')->with('status', 'Pegawai Berhasil Dihapus');
         }
         return redirect()->back();
        

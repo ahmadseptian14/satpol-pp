@@ -50,7 +50,7 @@ class PerformanceController extends Controller
         $data = $request->all();
 
         Performance::create($data);
-        return redirect()->route('member.index')->with('status', 'Data Kinerja Berhasil Ditambahkan');
+        return redirect()->route('member.index')->with('status', 'Jadwal Patroli Berhasil Ditambahkan');
     }
 
     /**
@@ -67,6 +67,16 @@ class PerformanceController extends Controller
         $members = Member::all();
 
         return view('pages.admin.performance.detail', ['item' => $item, 'members' => $members, 'members_id' => $members_id]);
+    }
+
+
+    public function showTime($members_id)
+    {
+       
+        $item = Performance::with(['member'])->where('members_id', $members_id)->get();
+        $members = Member::all();
+
+        return view('pages.admin.performance.time', ['item' => $item, 'members' => $members, 'members_id' => $members_id]);
     }
 
     /**
@@ -103,7 +113,7 @@ class PerformanceController extends Controller
         $item = Performance::findOrFail($id);
         $item->update($data);
 
-        return redirect()->route('member.index')->with('status', 'Data Kinerja Berhasil Diupdate');
+        return redirect()->route('member.index')->with('status', 'Jadwal Patroli Berhasil Diupdate');
     }
 
     /**
@@ -119,7 +129,7 @@ class PerformanceController extends Controller
             $item = Performance::findOrFail($id);
             $item->delete();
 
-            return redirect()->route('member.index')->with('status', 'Data Kinerja Berhasil Dihapus');
+            return redirect()->route('member.index')->with('status', 'Jadwal Patroli Berhasil Dihapus');
         }
             return redirect()->back();
        
@@ -127,13 +137,10 @@ class PerformanceController extends Controller
 
     public function export($members_id) 
     {   
-        $user = Auth::user()->roles == 'ADMIN';
         
-        if($user)
-        {
-            $performance = Performance::with(['member'])->where('members_id', $members_id)->get();
+        $performance = Performance::with(['member'])->where('members_id', $members_id)->get();
         return Excel::download(new PerformanceExport($performance), 'kinerja.xlsx');
-        }
+        
         return redirect()->back();
         
     }

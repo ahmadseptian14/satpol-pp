@@ -16,6 +16,7 @@ class CreatePerformancesTable extends Migration
         Schema::create('performances', function (Blueprint $table) {
             $table->id();
             $table->integer('members_id');
+            $table->integer('times_id');
             $table->string('kegiatan');
             $table->string('lama_waktu');
             $table->text('keteragan');

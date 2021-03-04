@@ -6,13 +6,9 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">Jadwal Patroli</h1>
-          @if (Auth::user()->roles == 'ADMIN')
-          <a href="{{route('performance.create')}}" class="btn btn-primary btn-sm shadow-sm">Tambah Jadwal Patroli</a>
-          @endif
-         
+          <h1 class="h3 mb-0 text-gray-800">Data Kinerja</h1>
+          {{-- <a href="{{route('performance.create')}}" class="btn btn-primary btn-sm shadow-sm">Tambah Kinerja</a> --}}
           </div>
-                 <a class="btn btn-warning" href="{{ route('export', ['id'=> $members_id]) }}">Export Jadwal Patroli</a>   
           <div class="row">
               <div class="card-body">
                   <div class="table-responsive">
@@ -27,11 +23,14 @@
                                 @if (Auth::user()->roles == 'ADMIN')
                                 <th>Action</th> 
                                 @endif
+                                
+                    
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($item as $key => $performance)
                                 <tr> 
+                                {{-- <td>{{$item->firstItem() + $key}}</td> --}}
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$performance->kegiatan}}</td>
                                 <td>{{$performance->lama_waktu}}</td>
@@ -52,7 +51,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7" class="text-center">Jadwal Kosong</td>
+                                    <td colspan="7" class="text-center">Data Kosong</td>
                                 </tr>
                             @endforelse
                         </tbody>

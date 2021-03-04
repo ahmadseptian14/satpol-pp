@@ -5,5 +5,8 @@
   .navbar-light .navbar-nav .navbar-alternate {
     color: black !important;
   }
+  .navbar-light .navbar-nav .register {
+    color: white;
+  }
 }
 /*# sourceMappingURL=navbar-alternate.css.map */

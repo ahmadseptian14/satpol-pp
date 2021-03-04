@@ -19,4 +19,9 @@ class Performance extends Model
     {
         return $this->belongsTo(Member::class, 'members_id', 'id')->withTrashed();
     }
+
+    public function time()
+    {
+        return $this->belongsTo(Time::class, 'times_id', 'id')->withTrahsed();
+    }
 }

@@ -7,7 +7,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Tambah Kinerja </h1>
+    <h1 class="h3 mb-0 text-gray-800">Tambah Data Patroli </h1>
     </div>
 
 
@@ -27,7 +27,7 @@
         @csrf
 
        <div class="form-gorup mb-2">
-        <label for="members_d">Nama Anggota</label>
+        <label for="members_d">Nama Pegawai</label>
         <select style="width: 200px" name="members_id" required class="select2multiple " multiple>
             @foreach ($members as $member)
                 <option value="{{$member->id}}">
@@ -72,7 +72,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
     $('.select2multiple').select2({
-        placeholder:"Cari Nama Anggota",
+        placeholder:"Cari Nama Pegawai",
         allowClear:true,
        
     });
